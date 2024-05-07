@@ -2,53 +2,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <!-- Adding some fonts for social media logos (facebook, tiktok...etc) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- linking to google fonts to dl some ones -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- importing Montserrat family font from google fonts -->
+
     <title>Pizzorino</title>
   </head>
 
   <header>
     <nav>
-      <div id="navitems">
-        <ul
-          style="
-            list-style-type: none;
-            display: flex-box;
-            align-items: center;
-            text-align: center;
-            text-decoration: none;
-          "
-        >
+      <div class="navitems">
+        <ul class="menu_items">
           <li>
-            <img
-              id="logo"
-              src="./logo.png"
-              alt="logo"
-              height="150px"
-              width="150px"
-              style="border-radius: 50%"
-            />
+            <img id="logo" src="./logo.png" alt="logo" />
           </li>
           <li>
-            <img src="./" alt="" />
-            <a href="#about us">About Us</a>
-          </li>
-          <li><a href="#shop">Our Shop</a></li>
-          <li>
-            <a href="#pizzas">Our Pizzas</a>
+            <a href="#aboutUs"
+              ><i class="fa-solid fa-address-card"></i>About Us</a
+            >
           </li>
           <li>
-            <a href="#contact us">Contact Us</a>
+            <a href="#shop"><i class="fa-solid fa-shop"></i>Our Shop</a>
           </li>
+          <li>
+            <a href="#pizzas"
+              ><i class="fa-solid fa-pizza-slice"></i>Our Pizzas</a
+            >
+            <ul class="dropdown">
+              <li>
+                <a href="#sardine"
+                  ><i class="fa-solid fa-fish"></i>Sardine Pizza</a
+                >
+              </li>
+
+              <li>
+                <a href="#polenta"
+                  ><i class="fa-solid fa-pepper-hot"></i>Mexican Polenta</a
+                >
+              </li>
+              <li>
+                <a href="#elote"
+                  ><i class="fa-solid fa-cheese"></i>Elote Pizza</a
+                >
+              </li>
+              <li>
+                <a href="#bruschetta"
+                  ><i class="fa-solid fa-carrot"></i>Bruschetta Pizza</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#contactUs"
+              ><i class="fa-solid fa-address-book"></i>Contact Us</a
+            >
+          </li>
+          <input type="search" placeholder="Search..." />
         </ul>
       </div>
     </nav>
   </header>
   <body>
-    <section id="about us">
-      <div style="display: flex-box; text-align: center">
+    <section id="aboutUs">
+      <div id="textArea">
         <h1>Pizzorino's story</h1>
         <p>
           At heart of the ocean, & a few hundred meters from
@@ -68,12 +95,14 @@
           We invite you to our newly opened pizzeria: <b>PIZZORINO</b> &
           discover what Bob's clones managed to create.
         </p>
-        <img src="./outsideshop.png" alt="" height="350" />
-        <img src="./insideshop.png" alt="" height="350" />
+        <div id="image">
+          <img src="./outsideshop.png" alt="" height="350" />
+          <img src="./insideshop.png" alt="" height="350" />
+        </div>
       </div>
     </section>
     <section id="shop">
-      <div style="display: flex-box; text-align: center">
+      <div id="textArea">
         <h1>Our Shop</h1>
         <p>
           Not too far from <b>Krusty Krabs</b>, this little shop has advantage
@@ -88,12 +117,19 @@
           <br /><br />
           And what would a shop be without its staff ? Here's our team.
         </p>
-        <img src="./staff.jpeg" alt="" height="450" />
-        <div id="pizzas">
+        <div id="image"><img src="./staff.jpeg" alt="" height="450" /></div>
+      </div>
+    </section>
+
+    <section id="pizzas">
+      <div id="pizza">
+        <div id="textArea">
           <h1>Our Pizzas</h1>
-          <div id="recipe 1">
-            <h3>Sardine Pizza:</h3>
-            <img src="./sardine pizza.webp" alt="" height="250px" />
+          <div id="recipe">
+            <h3 id="sardine">Sardine Pizza</h3>
+            <div class="recipeImg">
+              <img src="./sardine pizza.webp" alt="" />
+            </div>
             <h4>
               <u>Ingredients :</u>
             </h4>
@@ -159,9 +195,9 @@
             </h5>
             <p>Sprinkle with torn basil; squeeze lemon juice over the pizza.</p>
           </div>
-          <div id="recipe2">
-            <h3>Mexican Polenta Pizza</h3>
-            <img src="./Polenta.webp" alt="" height="250px" />
+          <div id="recipe">
+            <h3 id="polenta">Mexican Polenta</h3>
+            <div class="recipeImg"><img src="./Polenta.webp" alt="" /></div>
             <h4><u>Ingredients :</u></h4>
             <ul>
               <li>1 cup cornmeal</li>
@@ -220,9 +256,9 @@
               with additional shredded cheese, if desired.
             </p>
           </div>
-          <div id="recipe3">
-            <h3>Elote Pizza</h3>
-            <img src="./Elote.webp" alt="" height="250px" />
+          <div id="recipe">
+            <h3 id="elote">Elote Pizza</h3>
+            <div class="recipeImg"><img src="./Elote.webp" alt="" /></div>
             <h4><u>Ingredients :</u></h4>
             <ul>
               <li>1 pound prepared pizza dough</li>
@@ -282,9 +318,9 @@
               brush crust with Tajin butter. Cut into wedges and serve.
             </p>
           </div>
-          <div id="recipe4">
-            <h3>Bruschetta Pizza</h3>
-            <img src="./Bruschetta.webp" alt="" height="250px" />
+          <div id="recipe">
+            <h3 id="bruschetta">Bruschetta</h3>
+            <div class="recipeImg"><img src="./Bruschetta.webp" alt="" /></div>
             <h4><u>Ingredients :</u></h4>
             <ul>
               <li>1 pound prepared pizza dough</li>
@@ -340,8 +376,8 @@
       </div>
     </section>
 
-    <section id="contact us">
-      <div style="text-align: center">
+    <section id="contactUs">
+      <div id="textArea">
         <form action="">
           <label for="firstname">First Name: </label>
           <input type="text" name="firstname" /> <br />
@@ -349,34 +385,44 @@
           <input type="text" name="lastname" /> <br />
           <label for="phone">Phone Number: </label>
           <input type="tel" name="phone" /> <br />
-          <input type="button" name="send data" value="Confirm" />
+          <input
+            type="submit"
+            name="send data"
+            value="Confirm"
+            class="submit"
+          />
         </form>
       </div>
     </section>
   </body>
-  <footer style="text-align: center">
+  <footer>
     <div id="media">
       <h1>Our Social Medias</h1>
-      <div
-        style="
-          display: inline-flex;
-          list-style-type: none;
-          justify-content: space-evenly;
-          width: 25%;
-        "
-      >
-        <li><i class="fa-brands fa-facebook"></i></li>
-        <li><i class="fa-brands fa-x-twitter"></i></li>
-        <li><i class="fa-brands fa-instagram"></i></li>
-        <li><i class="fa-brands fa-tiktok"></i></li>
-        <li>Our Phone number: +213 1234567890</li>
+      <div id="textArea">
+        <li>
+          <a href="#facebook"><i class="fa-brands fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="#x"><i class="fa-brands fa-x-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#instagram"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-solid fa-phone-volume"></i></a>
+        </li>
       </div>
-      <p>&copy; Copyright PIZZORINO.LLC, All rights reserved 2024.</p>
+      <!-- <p>&copy; Copyright PIZZORINO.LLC, All rights reserved 2024.</p> -->
     </div>
   </footer>
+  <p class="copyright">
+    &copy; Copyright PIZZORINO.LLC, All rights reserved 2024.
+  </p>
 </html>
 
-<!-- I intentionally put very little CSS styling, to make a stability & viewing for the page 
-    (mainly centering text/images).
+<!-- CSS would be much more easier if used some frameworks and :root selector
 
   -->
